@@ -1,0 +1,16 @@
+[Unit]
+Description=LCD Calendar Countdown Service
+After=Network.target
+
+[Service]
+ExecStart=/home/lcdpi/development/lcd-cal/run.sh
+Restart=always
+User=root
+WorkingDirectory=/home/lcdpi/development/lcd-cal
+Environment="LCD_CAL_ICS=https://somehost.com/somepathtocalendar.ics"
+##### Default is only 1 clock using the local time zone. Uncomment below environment lines to define specific zones
+#Environment="LCD_CAL_CLOCK1_TZ=US/Central"
+#Environment="LCD_CAL_CLOCK2_TZ=US/Pacific"
+
+[Install]
+WantedBy=multi-user.target
