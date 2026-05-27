@@ -12,6 +12,12 @@ Also included is a systemd service file you can use to make the LCD controller p
 ## Running
 Clone the project to your pi, wire up your `2004A` LCD display to GPIO 2 and 3 to SDA and SDL on the display respectively (Also VCC and GND).
 
+### Enable I2C
+Enable I2C in the raspi config UI, or run:
+```sh
+raspi-config nonint do_i2c 0
+```
+
 ### Create a venv for the project
 ```sh
 python -m venv venv
